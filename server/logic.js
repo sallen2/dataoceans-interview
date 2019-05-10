@@ -7,11 +7,11 @@ module.exports = function(str1, str2) {
     }
 
     for (let char of str1) {
-        obj[char] === undefined ? obj[char] = 1 : obj[char] = obj[char] + 1
+        char in obj ? obj[char] += 1 : obj[char] = 1
     }
 
     for (let char of str2) {
-        obj2[char] === undefined ? obj2[char] = 1 : obj2[char] = obj2[char] + 1
+        char in obj2 ? obj2[char] += 1 : obj2[char] = 1
     }
 
     for (let key in obj) {
